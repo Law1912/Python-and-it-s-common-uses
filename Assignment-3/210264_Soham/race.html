@@ -1,0 +1,30 @@
+<html>
+<body>
+	<h1>Race Registration!</h1>
+		<form action="/action_page.php">
+			<label for="fname">First name</label>
+			<input type="text" id="fname" name="fname">
+			<label for="lname">Last name</label>
+			<input type="text" id="lname" name="lname"><br><br>
+			<p>Select a Race:</p>
+			<input type="radio" id="fun" name="fun">
+			<label for="fun">Fun Run 5k</label><br>
+			<input type="radio" id="half" name="half">
+			<label for="half">Half Marathon</label><br>
+			<input type="radio" id="full" name="full">
+			<label for="full">Full Marathon</label><br>
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email">
+			<label for="pass">Password</label>
+			<input type="password" id="pass" name="pass"><br>
+			<label for="age">Select Age Group</label>
+			<select name="age" id="age">
+				<option value="under18">Under 18</option>
+				<option value="18-30">18-30</option>
+				<option value="30-50">30-50</option>
+				<option value="50+">50+</option>
+			</select><br>
+			<input type="submit" value="Register">
+		</form>
+</body>
+</html>

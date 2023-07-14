@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+    <meta charset = "UTF-8">
+    <meta name="Discription" content="Professor Search">
+    <title> Professor_Search </title>
+</head>
+    <body>
+        <script>
+            function IsEmptyString(str)
+            {
+                nLen = str.length;
+                for(i=0; i<nLen; ++i)
+                {
+                    if(str.charAt(i) != " ")
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function frmsbm()
+            {
+                s1=document.Srchfrm1.selstffnam.value;
+                s2=document.Srchfrm1.selstffmail.value;
+                deptn=document.Srchfrm1.Dept_Stff.value;
+                var x;
+                x=0;
+                if(IsEmptyString(s1) && IsEmptyString(s2) && deptn == "Choose a department")
+                {
+                    alert("Please fill atleast 1 field before submitting");
+                    x=x+1;
+                    return false;
+                }
+                if(x==0)
+                {
+                    document.Srchfrm1.method="post";
+                    document.Srchfrm1.action="search/";
+                    document.Srchfrm1.submit();
+                }
+                return true;
+            }
+        </script>
+        <form name="Srchfrm1" method="post" onsubmit="frmsbm();">
+            <table border="0" cellpadding="4" cellspacing="1" align="CENTER" width="45%">
+                {% csrf_token %}
+				<tbody>
+                <tr>
+					<td class="tablehead" colspan="2" align="center">Multiple Search Criteria</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+					<tr>
+						<td class="tablecontent" colspan="1">
+						
+						Search By Department
+						</td>
+						<td class="tablecontent" colspan="1">
+						<select size="0" name="Dept_Stff" title="Listof:Dept_Stff"></select>
+                        </td>
+                        <script>
+                            var x = document.Srchfrm1.Dept_Stff;
+                            var option = document.createElement("option");
+                            option.text = "Choose a department"
+                            x.add(option);
+                        </script>
+					</tr>
+					<tr>
+						<td class="tablecontent" colspan="1">
+						<input type="hidden" name="sort" value="name">
+						
+						Search By Name
+						</td>
+						<td class="tablecontent" colspan="1">
+						<input type="text" name="selstffnam" maxlength="50" style="width: 250px;">
+						</td>
+					</tr>
+					<tr>
+						<td class="tablecontent" colspan="1">
+						
+						Search By EmailId
+						</td>
+						<td class="tablecontent" colspan="1">
+						<input type="hidden" name="sort" value="stffmail">
+						<input type="text" name="selstffmail" size="15" maxlength="20" onkeypress="uppercase();" style="width: 250px;">
+						@iitk.ac.in
+					    </td>
+					</tr>
+				<tr>
+					<td colspan="2" align="center" height="40">						
+						<input class="submit_button" type="button" name="sbmbtn" value="Submit" onclick="frmsbm();">
+                    </td>
+				</tr>
+			</tbody>
+            </table>
+        </form>
+    </body>
+
+
+
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Aerospace Engineering"
+option.value = "Aerospace Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Biological Sciences & Bioengineering"
+option.value = "Biological Sciences & Bioengineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Chemical Engineering"
+option.value = "Chemical Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Civil Engineering"
+option.value = "Civil Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Computer Science & Engineering"
+option.value = "Computer Science & Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Electrical Engineering"
+option.value = "Electrical Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Industrial & Management Engineering"
+option.value = "Industrial & Management Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Materials Science & Engineering"
+option.value = "Materials Science & Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Mechanical Engineering"
+option.value = "Mechanical Engineering"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Chemistry"
+option.value = "Chemistry"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Earth Sciences"
+option.value = "Earth Sciences"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Mathematics & Statistics"
+option.value = "Mathematics & Statistics"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Physics"
+option.value = "Physics"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "English"
+option.value = "English"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Fine Arts"
+option.value = "Fine Arts"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Philosophy"
+option.value = "Philosophy"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Psychology"
+option.value = "Psychology"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Sociology"
+option.value = "Sociology"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Economic Sciences"
+option.value = "Economic Sciences"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Cognitive Science"
+option.value = "Cognitive Science"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Environmental Engineering & Management"
+option.value = "Environmental Engineering & Management"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Laser Technology"
+option.value = "Laser Technology"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Design Programme"
+option.value = "Design Programme"
+x.add(option);
+</script>
+<script>
+var x = document.Srchfrm1.Dept_Stff;
+var option = document.createElement("option");
+option.text = "Materials Science Programme"
+option.value = "Materials Science Programme"
+x.add(option);
+</script>
